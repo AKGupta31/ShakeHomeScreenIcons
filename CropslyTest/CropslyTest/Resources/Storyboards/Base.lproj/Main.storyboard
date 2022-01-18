@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n72-S7-okz">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--App Icon View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="AppIconViewController" customModule="CropslyTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bd1-uZ-tgz">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wZe-v0-cqW">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AppIconCollectionCell" id="ngM-1E-70C" customClass="AppIconCollectionCell" customModule="CropslyTest" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="aLV-mL-HeU">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon1" translatesAutoresizingMaskIntoConstraints="NO" id="gfh-YU-xW6">
+                                                    <rect key="frame" x="32" y="32" width="64" height="64"/>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOf-vJ-yxZ">
+                                                    <rect key="frame" x="14" y="14" width="36" height="36"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="36" id="nTP-iE-htc"/>
+                                                        <constraint firstAttribute="width" secondItem="VOf-vJ-yxZ" secondAttribute="height" multiplier="1:1" id="tGb-hH-2o0"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="ic_remove"/>
+                                                    <connections>
+                                                        <action selector="actionRemove:" destination="ngM-1E-70C" eventType="touchUpInside" id="Z0i-iI-Oqe"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="gfh-YU-xW6" firstAttribute="centerX" secondItem="aLV-mL-HeU" secondAttribute="centerX" id="Bra-MK-y6M"/>
+                                                <constraint firstItem="gfh-YU-xW6" firstAttribute="centerY" secondItem="aLV-mL-HeU" secondAttribute="centerY" id="FrF-eR-3Pd"/>
+                                                <constraint firstItem="VOf-vJ-yxZ" firstAttribute="leading" secondItem="gfh-YU-xW6" secondAttribute="leading" constant="-18" id="Ghi-rv-4lS"/>
+                                                <constraint firstItem="VOf-vJ-yxZ" firstAttribute="top" secondItem="gfh-YU-xW6" secondAttribute="top" constant="-18" id="VlV-hj-J8C"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="btnRemove" destination="VOf-vJ-yxZ" id="kq5-wP-sQD"/>
+                                            <outlet property="imgIcon" destination="gfh-YU-xW6" id="tSt-DI-qSd"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="b5U-0j-Ng4"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="SDv-kS-JMl"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bd1-uZ-tgz" secondAttribute="bottom" id="1UP-Kb-QLo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bd1-uZ-tgz" secondAttribute="trailing" id="2Dz-Gs-VBv"/>
+                            <constraint firstItem="bd1-uZ-tgz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7st-dC-yKD"/>
+                            <constraint firstItem="bd1-uZ-tgz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="MnD-ey-F2F"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="90w-J1-hWh">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="gh5-35-0Ef">
+                            <connections>
+                                <action selector="actionDone:" destination="BYZ-38-t0r" id="Yah-TQ-HW6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="collectionViewAppIcons" destination="bd1-uZ-tgz" id="Xc0-x3-CwA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928.98550724637687" y="83.705357142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ezM-fe-6Np">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="n72-S7-okz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7cw-0d-28g">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="P4c-qk-f19"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vex-gz-DNs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="83.705357142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_remove" width="18" height="18"/>
+        <image name="icon1" width="64" height="64"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
